@@ -14,20 +14,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.foodrunner.R
-import com.example.foodrunner.adapter.FavouriteRecyclerAdapter
 import com.example.foodrunner.adapter.HomeRecyclerAdapter
 import com.example.foodrunner.database.RestrauntDatabase
 import com.example.foodrunner.database.RestrauntEntity
+import com.example.foodrunner.model.Restraunts
 
 
 class FavouritesFragment : Fragment() {
     lateinit var recyclerFav: RecyclerView
     lateinit var layoutManager: RecyclerView.LayoutManager
-    lateinit var recyclerAdapter:FavouriteRecyclerAdapter
+    lateinit var recyclerAdapter:HomeRecyclerAdapter
     lateinit var progresslayout: RelativeLayout
     lateinit var progressBar: ProgressBar
 
-    var dbRestaurantList=listOf<RestrauntEntity>()
+    var dbRestaurantList=arrayListOf<Restraunts>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,13 +39,24 @@ class FavouritesFragment : Fragment() {
         progressBar=view.findViewById(R.id.progressBar)
         progresslayout.visibility=View.VISIBLE
         layoutManager= LinearLayoutManager(activity)
-        dbRestaurantList=RetrieveFavourites(activity as Context).execute().get()
+        val restrauntList=RetrieveFavourites(activity as Context).execute().get()
+        for(i in restrauntList) {
+            dbRestaurantList.add(
+                Restraunts(
+                    i.restraunt_id.toString(),
+                    i.restrauntName,
+                    i.restrauntRating,
+                    i.price,
+                    i.foodImage
+                )
+            )
+        }
         if(dbRestaurantList.isEmpty()) {
             Toast.makeText(context,"You have not selected any restraunt as your favourite",Toast.LENGTH_SHORT).show()
         }
         if(activity!=null) {
             progresslayout.visibility=View.GONE
-            recyclerAdapter= FavouriteRecyclerAdapter(activity as Context,dbRestaurantList)
+            recyclerAdapter= HomeRecyclerAdapter(activity as Context,dbRestaurantList)
             recyclerFav.adapter=recyclerAdapter
             recyclerFav.layoutManager=layoutManager
         }
