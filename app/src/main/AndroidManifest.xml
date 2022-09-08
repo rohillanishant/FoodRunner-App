@@ -18,13 +18,10 @@
         android:theme="@style/Theme.FoodRunner"
         tools:targetApi="31">
         <activity
-            android:name=".activity.NextForgotActivity"
+            android:name=".activity.OTPActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.NextRegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.NewActivity"
+            android:name=".activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ForgotPasswordActivity"
@@ -36,7 +33,7 @@
             android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

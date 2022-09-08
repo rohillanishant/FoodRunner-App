@@ -13,9 +13,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
+        android:drawableLeft="@drawable/ic_profile"
         android:paddingLeft="4dp"
+        android:elevation="20dp"
         android:background="#FFFFFF"
-        android:hint="Name"
+        android:hint="Name (min. 3 characters)"
         android:inputType="text"
         android:maxLength="20" />
 
@@ -25,10 +27,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:layout_below="@id/etName"
+        android:elevation="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:paddingLeft="4dp"
         android:background="#FFFFFF"
+        android:drawableLeft="@drawable/ic_email"
         android:hint="Email"
         android:inputType="text"
         android:maxLines="1" />
@@ -36,9 +40,11 @@
         android:id="@+id/etMobileNumber"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:elevation="20dp"
         android:layout_marginTop="15dp"
         android:layout_below="@id/etEmail"
         android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/ic_phone"
         android:layout_marginRight="20dp"
         android:paddingLeft="4dp"
         android:background="#FFFFFF"
@@ -51,53 +57,59 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
+        android:elevation="20dp"
         android:layout_below="@id/etMobileNumber"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:drawableLeft="@drawable/ic_location"
         android:paddingLeft="4dp"
         android:background="#FFFFFF"
         android:hint="Delivery Address"
         android:inputType="text"
         android:maxLines="3" />
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_below="@id/etAddress"
-        android:paddingLeft="4dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
         android:background="#FFFFFF"
+        android:drawableLeft="@drawable/ic_lock"
         android:hint="Password"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
+        android:paddingLeft="4dp" />
+
     <EditText
         android:id="@+id/etConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_below="@id/etPassword"
-        android:paddingLeft="4dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:elevation="20dp"
         android:background="#FFFFFF"
+        android:drawableLeft="@drawable/ic_lock"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
+        android:paddingLeft="4dp" />
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/etConfirmPassword"
-        android:layout_marginTop="28dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#E31B1B"
-        android:text="Register"
-        />
+        android:text="Register" />
 
 
 </RelativeLayout>

@@ -18,10 +18,12 @@
         android:id="@+id/etMobileNumber"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:drawableLeft="@drawable/ic_phone"
         android:layout_below="@id/imglogo"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:paddingLeft="4dp"
+        android:elevation="20dp"
         android:background="#FFFFFF"
         android:hint="Mobile Number (10 digits)"
         android:inputType="number"
@@ -35,10 +37,12 @@
         android:layout_below="@id/etMobileNumber"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:elevation="20dp"
         android:paddingLeft="4dp"
         android:background="#FFFFFF"
         android:hint="Password"
         android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_lock"
         android:maxLines="1" />
 
     <Button
