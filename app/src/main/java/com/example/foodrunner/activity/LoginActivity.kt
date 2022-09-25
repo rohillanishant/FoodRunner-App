@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.android.volley.Request
 import com.android.volley.Response
@@ -26,11 +27,16 @@ class LoginActivity : AppCompatActivity() {
     lateinit var txtSignUp:TextView
     lateinit var btnLogin:Button
     lateinit var etMobileNumber:EditText
+    lateinit var toolbar: Toolbar
     lateinit var etPassword:EditText
     override fun onCreate(savedInstanceState: Bundle?) {
-        title="Login"
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        toolbar=findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title="Login"
+
         sharedPreferences=getSharedPreferences("FoodRunner Preferences",Context.MODE_PRIVATE)
         txtForgotPassword=findViewById(R.id.txtForgotPassword)
         txtSignUp=findViewById(R.id.txtSignUp)
@@ -64,6 +70,7 @@ class LoginActivity : AppCompatActivity() {
                         if(success) {
                             sharedPreferences.edit().putBoolean("isLoggedIn",true).apply()
                             val loginObject=data.getJSONObject("data")
+                            sharedPreferences.edit().putString("user_id",loginObject.getString("user_id")).apply()
                             sharedPreferences.edit().putString("name",loginObject.getString("name")).apply()
                             sharedPreferences.edit().putString("mobile_number",loginObject.getString("mobile_number")).apply()
                             sharedPreferences.edit().putString("email",loginObject.getString("email")).apply()

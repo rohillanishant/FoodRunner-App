@@ -1,6 +1,8 @@
 package com.example.foodrunner.adapter
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.os.AsyncTask
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.foodrunner.R
+import com.example.foodrunner.activity.RestrauntMenuActivity
 import com.example.foodrunner.database.RestrauntDatabase
 import com.example.foodrunner.database.RestrauntEntity
 import com.example.foodrunner.model.Restraunts
@@ -35,7 +38,6 @@ class HomeRecyclerAdapter(val context: Context, val itemList:ArrayList<Restraunt
         holder.txtPrice.text=restraunt.Price
         holder.txtRestrauntRating.text=restraunt.restrauntRating
         Picasso.get().load(restraunt.foodImage).error(R.drawable.foodrunner).into(holder.imgFood)
-        val restrauntId=restraunt.restrauntId
 
         val restrauntEntity=RestrauntEntity(
             restraunt.restrauntId.toInt(),
@@ -72,7 +74,10 @@ class HomeRecyclerAdapter(val context: Context, val itemList:ArrayList<Restraunt
             }
         }
         holder.content.setOnClickListener{
-            Toast.makeText(context,"Clicked on ${holder.txtRestrauntName.text}",Toast.LENGTH_SHORT).show()
+            val intent= Intent(context,RestrauntMenuActivity::class.java)
+            intent.putExtra("restraunt_id", restraunt.restrauntId)
+            intent.putExtra("restraunt_name",restraunt.restrauntName)
+            context.startActivity(intent)
         }
     }
     class HomeViewHolder(view: View):RecyclerView.ViewHolder(view) {

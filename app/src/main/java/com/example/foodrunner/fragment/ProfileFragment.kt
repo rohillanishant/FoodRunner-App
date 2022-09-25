@@ -24,21 +24,22 @@ class ProfileFragment : Fragment() {
     lateinit var txtPhoneNumber:TextView
     lateinit var txtEmail:TextView
     lateinit var txtAddress:TextView
+    lateinit var txtUserId:TextView
     lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_profile, container, false)
         txtName=view.findViewById(R.id.txtName)
         txtPhoneNumber= view.findViewById(R.id.txtPhoneNumber)
         txtEmail =view.findViewById(R.id.txtEmail)
         txtAddress=view.findViewById(R.id.txtAddress)
+        txtUserId=view.findViewById(R.id.txtUserId)
 
         sharedPreferences = (activity as FragmentActivity).getSharedPreferences(getString(R.string.preference_file_name),Context.MODE_PRIVATE)
-
+        txtUserId.text="User id = ${sharedPreferences.getString("user_id",null)}"
         txtName.text=sharedPreferences.getString("name",null)
         txtPhoneNumber.text="+91-" + sharedPreferences.getString("mobile_number",null)
         txtEmail.text=sharedPreferences.getString("email",null)

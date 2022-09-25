@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="70dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <TextView
+            android:id="@+id/txtFoodNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="Food.No"
+            android:textColor="#000"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/txtFoodname"
+            android:layout_toRightOf="@id/txtFoodNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Food Name"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFoodname"
+            android:layout_marginTop="10dp"
+            android:text="Rs.Price"
+            android:layout_toRightOf="@id/txtFoodNo"
+            android:layout_marginLeft="20dp"
+            android:textSize="16sp"
+            />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:backgroundTint="@color/app_color"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:elevation="20dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>

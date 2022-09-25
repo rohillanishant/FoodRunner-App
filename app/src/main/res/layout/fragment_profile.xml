@@ -75,6 +75,21 @@
             android:textSize="20sp"
             android:background="#fff"
             android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/txtUserId"
+            android:layout_below="@id/txtAddress"
+            android:layout_marginTop="20dp"
+            android:elevation="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="User id "
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:background="#fff"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 

@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.android.volley.Request
 import com.android.volley.Response
@@ -27,11 +28,18 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var btnRegister:Button
     lateinit var etPassword:EditText
     lateinit var etConfirmPassword:EditText
+    lateinit var toolbar: Toolbar
     lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        title="Register Yourself"
+
+        toolbar=findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title="Register Yourself"
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         etName=findViewById(R.id.etName)
         etEmail=findViewById(R.id.etEmail)
         etMobileNumber=findViewById(R.id.etMobileNumber)

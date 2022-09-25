@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/drawable-anydpi/ic_logOut.xml" value="0.2265" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/drawable-anydpi/ic_rating.xml" value="0.2265" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/drawable-anydpi/ic_sort.xml" value="0.2265" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_cart.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_forgot_password.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
@@ -12,16 +14,23 @@
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_new.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_next_forgot.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_next_register.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_order.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_otp.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/activity_restraunt_menu.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/drawer_header.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/fragment_faqs.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/fragment_favourites.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/fragment_order_history.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/fragment_profile.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/recycler_cart_single_row.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/recycler_fav_single_row.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/recycler_home_single_row.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/recycler_order_history_restraunt.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/layout/recycler_restraunt_menu_single_row.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/menu/menu_drawer.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/menu/menu_home.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/rohil/AndroidStudioProjects/FoodRunner/app/src/main/res/xml/network_security_config.xml" value="0.22826086956521738" />
       </map>
     </option>

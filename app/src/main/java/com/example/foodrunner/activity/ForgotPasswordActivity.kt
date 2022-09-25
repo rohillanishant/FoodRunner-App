@@ -9,6 +9,7 @@ import android.provider.Settings
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.android.volley.Request
@@ -23,13 +24,21 @@ class ForgotPasswordActivity : AppCompatActivity() {
     lateinit var etMobileNumber:EditText
     lateinit var etEmail:EditText
     lateinit var btnNext:Button
+    lateinit var toolbar:androidx.appcompat.widget.Toolbar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title="Forgot Password"
         setContentView(R.layout.activity_forgot_password)
+
+        toolbar=findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title="Forgot Password"
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         etMobileNumber=findViewById(R.id.etMobileNumber)
         etEmail=findViewById(R.id.etEmail)
         btnNext=findViewById(R.id.btnNext)
+        
         btnNext.setOnClickListener() {
             if(etMobileNumber.text.toString().isEmpty()) {
                 Toast.makeText(this@ForgotPasswordActivity,"Mobile Number not Entered",Toast.LENGTH_SHORT).show()
