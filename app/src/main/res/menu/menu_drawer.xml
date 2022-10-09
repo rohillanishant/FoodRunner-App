@@ -12,7 +12,7 @@
     <item
         android:id="@+id/fav"
         android:icon="@drawable/ic_fav"
-        android:title="Favourite Restraunts"/>
+        android:title="Favourite Restaurants"/>
     <item
         android:id="@+id/orderHistory"
         android:icon="@drawable/ic_history"

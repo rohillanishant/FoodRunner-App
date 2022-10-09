@@ -79,7 +79,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.home -> {
                     supportFragmentManager.beginTransaction().replace(R.id.frameLayout, HomeFragment()).commit()
-                    supportActionBar?.title="ALL Restraunts"
+                    supportActionBar?.title="ALL Restaurants"
                     drawerLayout.closeDrawers()
                 }
                 R.id.profile -> {
@@ -89,7 +89,7 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.fav -> {
                     supportFragmentManager.beginTransaction().replace(R.id.frameLayout, FavouritesFragment()).commit()
-                    supportActionBar?.title="Favourite Restraunts"
+                    supportActionBar?.title="Favourite Restaurants"
                     drawerLayout.closeDrawers()
                 }
                 R.id.orderHistory -> {
@@ -128,7 +128,7 @@ class HomeActivity : AppCompatActivity() {
         val transaction=supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frameLayout,fragment)
         transaction.commit()
-        supportActionBar?.title="All Restraunts"
+        supportActionBar?.title="All Restaurants"
         navigationView.setCheckedItem(R.id.home)
     }
 
