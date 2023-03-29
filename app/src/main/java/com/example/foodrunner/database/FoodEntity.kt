@@ -10,4 +10,4 @@ data class FoodEntity (
     @ColumnInfo(name="food_name") val foodName:String,
     @ColumnInfo(name="food_price") val foodPrice:String,
     @ColumnInfo(name="restraunt_name") val restrauntName:String
-        )
+    )

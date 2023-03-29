@@ -36,10 +36,12 @@ import com.example.foodrunner.model.Menu
 import com.example.foodrunner.util.ConnectionManager
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonObject
+import com.razorpay.Checkout
+import com.razorpay.PaymentResultListener
 import org.json.JSONArray
 import org.json.JSONObject
 
-class CartActivity : AppCompatActivity() {
+class CartActivity : AppCompatActivity() , PaymentResultListener {
     lateinit var toolbar: Toolbar
     lateinit var txtRestrauntName:TextView
     lateinit var recyclerCart: RecyclerView
@@ -47,6 +49,7 @@ class CartActivity : AppCompatActivity() {
     lateinit var recyclerAdapter: CartRecyclerAdapter
     lateinit var sharedPreferences:SharedPreferences
     lateinit var btnOrder:Button
+    var OrderPlaced : Boolean = false
     var dbCartList= arrayListOf<Cart>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,7 +88,9 @@ class CartActivity : AppCompatActivity() {
         val userId= sharedPreferences.getString("user_id", null)
         val restrauntId= intent.getStringExtra("restrauntId")
         val totalCost= intent.getIntExtra("total_cost",0)
-        btnOrder.text="Place Order(Total Rs. $totalCost )"
+        val cost=totalCost.toString()
+
+        btnOrder.text="Place Order(Total Rs. ${cost.substring(1)} )"
         val jsonparam=JSONArray()
         for (foodItem in foodList) {
             val foodIdobj=JSONObject()
@@ -105,10 +110,8 @@ class CartActivity : AppCompatActivity() {
                         val data=it.getJSONObject("data")
                         val success=data.getBoolean("success")
                         if(success) {
-                            Toast.makeText(this@CartActivity,"Order Placed Successfully",Toast.LENGTH_SHORT).show()
-                            val intent=Intent(this@CartActivity,OrderActivity::class.java)
-                            startActivity(intent)
-                            finishAffinity()
+                            Toast.makeText(this@CartActivity,"Order Saved",Toast.LENGTH_SHORT).show()
+                            OrderPlaced=true
                         } else {
                             val responseMessageServer = data.getString("errorMessage")
                             Toast.makeText(this, responseMessageServer.toString(), Toast.LENGTH_SHORT).show()
@@ -142,9 +145,39 @@ class CartActivity : AppCompatActivity() {
                 dialog.create()
                 dialog.show()
             }
+            startPayment(totalCost)
+        }
+
+    }
+    private fun startPayment(totalCost: Int) {
+        /*
+        *  You need to pass the current activity to let Razorpay create CheckoutActivity
+        * */
+        val co = Checkout()
+
+        try {
+            val options = JSONObject()
+            options.put("name","Razorpay Corp")
+            options.put("description","Demoing Charges")
+            //You can omit the image option to fetch the image from the dashboard
+            options.put("image","https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg")
+            options.put("theme.color", "#3399cc");
+            options.put("currency","INR");
+            var cost=totalCost.toString()
+            cost+="00";
+            options.put("amount", cost.substring(1))//pass amount in currency subunits
+
+            val prefill = JSONObject()
+            prefill.put("email","")
+            prefill.put("contact","")
+
+            options.put("prefill",prefill)
+            co.open(this,options)
+        }catch (e: Exception){
+            Toast.makeText(this,"Error in payment: "+ e.message,Toast.LENGTH_LONG).show()
+            e.printStackTrace()
         }
     }
-
     override fun onBackPressed() {
         DeleteCart(applicationContext).execute().get()
         val intent= Intent(this@CartActivity,HomeActivity::class.java)
@@ -167,5 +200,18 @@ class CartActivity : AppCompatActivity() {
             return true
         }
 
+    }
+
+    override fun onPaymentSuccess(p0: String?) {
+        Toast.makeText(this@CartActivity,"Payment Successfull",Toast.LENGTH_SHORT).show()
+        if(OrderPlaced){
+            val intent=Intent(this@CartActivity,OrderActivity::class.java)
+            startActivity(intent)
+            finishAffinity()
+        }
+    }
+
+    override fun onPaymentError(p0: Int, p1: String?) {
+        Toast.makeText(this@CartActivity,"Payment Failed",Toast.LENGTH_SHORT).show()
     }
 }
