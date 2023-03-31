@@ -157,11 +157,11 @@ class CartActivity : AppCompatActivity() , PaymentResultListener {
 
         try {
             val options = JSONObject()
-            options.put("name","Razorpay Corp")
+            options.put("name","Food Runner")
             options.put("description","Demoing Charges")
             //You can omit the image option to fetch the image from the dashboard
-            options.put("image","https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg")
-            options.put("theme.color", "#3399cc");
+            //options.put("image","https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg")
+            options.put("theme.color", "#FC4C3B");
             options.put("currency","INR");
             var cost=totalCost.toString()
             cost+="00";
