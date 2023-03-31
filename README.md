@@ -1,5 +1,4 @@
-# FoodRunner-App
-![foodRunner](https://user-images.githubusercontent.com/67462478/229033989-66f7eb25-d7a8-4468-9cff-7751cb9c474f.png)
+# FoodRunner-App ![foodRunner](https://user-images.githubusercontent.com/67462478/229033989-66f7eb25-d7a8-4468-9cff-7751cb9c474f.png)
 
 
 This is an android online food delivery app. We can order food from a restaurant ,save a restaurant to favourites , check our order history etc. 
