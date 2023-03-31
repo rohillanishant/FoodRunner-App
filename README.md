@@ -4,7 +4,7 @@
 This is an android online food delivery app. We can order food from a restaurant ,save a restaurant to favourites , check our order history etc.It also have payment gateway.
 
 # Features :
-  *SignUp and SignIn
+  *SignUp and SignIn \n
   *OTP and Change password for forgotten password
   *Add to Favourites
   *Order History
