@@ -20,7 +20,7 @@ This is an android online food delivery app. We can order food from a restaurant
   Razorpay Gateway for Payment (Test Mode)
   
 # ScreenShots:
-![Food Runner Screenshots](https://github.com/user-attachments/assets/6747cbeb-21eb-4696-ad34-a9cf07216f7c)
+![Food](https://github.com/user-attachments/assets/6747cbeb-21eb-4696-ad34-a9cf07216f7c)
 
 # Data-Flow
 ![final_project_flow_chart](https://user-images.githubusercontent.com/67462478/229033822-cc78af4b-3ce8-4789-a3c8-6b8e3eadc358.jpg)
