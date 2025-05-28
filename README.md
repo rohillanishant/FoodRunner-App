@@ -11,8 +11,7 @@ This is an android online food delivery app. We can order food from a restaurant
   *Payment after adding to Cart
   
 # Technologies :
-  XML for Frontend\
-  Kotlin for Backend\
+  Kotlin,XML for Frontend\
   Volley Library for HTTP Requests\
   Room Library for Database\
   Picasso Library for Image Loading\
